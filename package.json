@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -d out --nojekyll --cname jungwooyang.com"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
