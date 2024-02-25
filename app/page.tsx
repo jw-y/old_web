@@ -16,12 +16,12 @@ export default function Page() {
           />
         </div>
         <div>
-        <h2 className="text-xl font-bold">Hi, I'm Jungwoo Yang!</h2>
+        <h2 className="text-xl font-bold">{`Hi, I'm Jungwoo Yang!`}</h2>
         <br/>
         <p className="text-lg">
-        I'm a researcher and developer at Qraft Technologies. 
+        {`I'm a researcher and developer at Qraft Technologies. 
         My main interests are deep learning, quantitative trading and high performance computing.
-        I'm always open to learning new things!
+        I'm always open to learning new things!`}
         </p>
         <br/>
         <p className="text-lg">

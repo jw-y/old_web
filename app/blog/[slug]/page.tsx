@@ -1,14 +1,14 @@
 import { findBlogPost } from "@/app/lib/mdx"
  
-export async function generateMetadata({ params }) {
-  const post = findBlogPost(params.slug);
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const post = findBlogPost(params.slug) || {meta: {title:""}, content: ""};
   return {
     title: post.meta.title,
   }
 }
 
 export default function Page({ params }: { params: { slug: string } }) {
-    const post = findBlogPost(params.slug);
+    const post = findBlogPost(params.slug) || {meta: {title:""}, content: ""};
     return (
     <section>
     <h1>

@@ -2,17 +2,17 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-function readMDXFile(filePath) {
+function readMDXFile(filePath: string) {
   const fileContents = fs.readFileSync(filePath, 'utf-8');
   const { data: meta, content } = matter(fileContents);
   return {meta, content};
 }
 
-function getMDXFiles(dir) {
+function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx');
 }
 
-function getMDXData(dir) {
+function getMDXData(dir: string) {
   let mdxFiles = getMDXFiles(dir);
   return mdxFiles.map((file) => {
     let { meta, content } = readMDXFile(path.join(dir, file));

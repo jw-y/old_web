@@ -40,12 +40,17 @@ export function getAllPostSlugs() {
     };
   });
 }
+interface PostData {
+  slug: string;
+  date: string; // Adjust the type as necessary
+  [key: string]: any;
+}
 
 // Function to get sorted posts data for listing on the home page or elsewhere
 export function getSortedPostsData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map(fileName => {
+  const allPostsData: PostData[] = fileNames.map(fileName => {
     // Remove ".md" from file name to get slug
     const slug = fileName.replace(/\.md$/, '');
 
@@ -56,9 +61,12 @@ export function getSortedPostsData() {
     // Use gray-matter to parse the post metadata section
     const { data: frontMatter } = matter(fileContents);
 
+    const date = frontMatter.date || '';
+
     // Combine the data with the slug
     return {
       slug,
+      date,
       ...frontMatter,
     };
   });

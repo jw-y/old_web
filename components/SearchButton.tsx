@@ -2,7 +2,7 @@
 import { KBarProvider } from "kbar";
 import siteMetadata from '@/data/siteMetadata'
 
-function KBarButton(props){
+function KBarButton(props: any){
   return (
   <KBarProvider>
   </KBarProvider>
