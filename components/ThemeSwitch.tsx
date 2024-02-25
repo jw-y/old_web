@@ -9,8 +9,10 @@ const ThemeSwitch = () => {
 
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), [])
+  console.log(`{}, mounted: ${mounted}`, );
 
   if (!mounted) {
+    console.log("NOT MOUNTED");
     return null
   }
 
