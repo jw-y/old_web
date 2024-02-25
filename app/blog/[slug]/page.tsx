@@ -1,4 +1,11 @@
-import { findBlogPost } from "@/app/lib/mdx"
+import { getSortedPosts, findBlogPost } from "@/app/lib/mdx"
+
+export function generateStaticParams() {
+  const allBlogs = getSortedPosts();
+  return allBlogs.map((post) => ({
+    slug: post.slug,
+  }))
+}
  
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const post = findBlogPost(params.slug) || {meta: {title:""}, content: ""};

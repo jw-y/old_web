@@ -3,7 +3,7 @@ import { getSortedPosts } from '../lib/mdx';
 
 export default function Page() {
     const allBlogs = getSortedPosts();
-    console.log(allBlogs);
+    //console.log(allBlogs);
     return (
     <section>
       <h1 className="font-medium text-2xl mb-8 tracking-tighter">
